@@ -32,6 +32,16 @@ public class Product {
 	private int productValue;
 
 
+	
+	public Product() {
+	}
+
+	public Product(int creditNumber, String productName, int productValue) {
+		this.creditNumber = creditNumber;
+		this.productName = productName;
+		this.productValue = productValue;
+	}
+
 	public int getCreditNumber() {
 		return creditNumber;
 	}

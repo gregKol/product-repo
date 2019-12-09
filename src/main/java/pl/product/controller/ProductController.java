@@ -37,7 +37,7 @@ public class ProductController {
 		log.log(Level.INFO, "Produkt zawiera", product.toString());
 		productRepository.save(product); // Zapis do bazy
 
-		return "Produkt zostal stworzony.";
+		return "Produkt zostal stworzony: " + product;
 	}
 
 	// Servis zwracajaca wszystkie produkty z bazy
