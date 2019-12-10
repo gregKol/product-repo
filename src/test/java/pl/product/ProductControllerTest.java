@@ -28,7 +28,7 @@ public class ProductControllerTest  extends AbstractTest{
 	      Product product = new Product(102, "Nazwa produktu", 1442);
 
 	      String inputJson = super.mapToJson(product);
-	      
+	      System.out.println("################ CREATE PRODUCT");
 	      MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
 	         .contentType(MediaType.APPLICATION_JSON_VALUE)
 	         .content(inputJson)).andReturn();
@@ -40,23 +40,23 @@ public class ProductControllerTest  extends AbstractTest{
 	   }
 	
 	
-	@Test
-	   public void getProductsList() throws Exception {
-	      String uri = "/getProduct";
-	      
-	      int[] tabNumb = {102};
-	      String inputJsonTab = super.mapToJson(tabNumb);
-	      
-	      MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
-	 	         .contentType(MediaType.APPLICATION_JSON_VALUE)
-	 	         .content(inputJsonTab)).andReturn();
-	      
-	      int status = mvcResult.getResponse().getStatus();
-	      assertEquals(200, status);
-	      String content = mvcResult.getResponse().getContentAsString();
-	      Product[] customer = super.mapFromJson(content, Product[].class);
-	      assertTrue(customer.length > 0);
-	   }
+//	@Test
+//	   public void getProductsList() throws Exception {
+//	      String uri = "/getProduct";
+//	      
+//	      int[] tabNumb = {102};
+//	      String inputJsonTab = super.mapToJson(tabNumb);
+//	      
+//	      MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
+//	 	         .contentType(MediaType.APPLICATION_JSON_VALUE)
+//	 	         .content(inputJsonTab)).andReturn();
+//	      
+//	      int status = mvcResult.getResponse().getStatus();
+//	      assertEquals(200, status);
+//	      String content = mvcResult.getResponse().getContentAsString();
+//	      Product[] customer = super.mapFromJson(content, Product[].class);
+//	      assertTrue(customer.length > 0);
+//	   }
 	
 	
 	
